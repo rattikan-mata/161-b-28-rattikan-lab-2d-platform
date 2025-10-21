@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
-
+public class PlayerController : MonoBehaviour 
+{
 	public float maxSpeed = 10f;
 	bool facingRight = true;
 
@@ -16,20 +16,22 @@ public class PlayerController : MonoBehaviour {
 	public float jumpForce = 700.0f;
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		r2d = GetComponent<Rigidbody2D>	();
 		anim = GetComponent<Animator>();
 	}
 	
-	void Update(){
+	void Update()
+	{
 		if( grounded && Input.GetKeyDown(KeyCode.Space) ){
 			anim.SetBool("Ground", false);
 			r2d.AddForce(new Vector2(0, jumpForce));
 		}
 	}
 
-	void FixedUpdate () {
-
+	void FixedUpdate () 
+	{
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
 		anim.SetBool("Ground", grounded);
 
@@ -47,7 +49,8 @@ public class PlayerController : MonoBehaviour {
 			Flip();
 	}
 
-	void Flip(){
+	void Flip()
+	{
 		facingRight = !facingRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
