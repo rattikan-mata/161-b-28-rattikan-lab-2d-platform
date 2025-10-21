@@ -13,4 +13,19 @@ public class Player : Character
     {
         
     }
+
+    public void OnHitWith(Enemy enemy)
+    {
+        TakeDamge(enemy.DamageHit);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Enemy enemy = other.gameObject.GetComponent<Enemy>();
+
+        if (enemy != null)
+        {
+            OnHitWith(enemy);
+        }
+    }
 }

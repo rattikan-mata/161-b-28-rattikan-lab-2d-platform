@@ -25,6 +25,14 @@ public class Ant : Enemy
         Behavior();
     }
 
+    public void Flip()
+    {
+        velocity.x *= -1;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+
     public override void Behavior()
     {
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
@@ -38,13 +46,5 @@ public class Ant : Enemy
         {
             Flip();
         }
-    }
-
-    public void Flip()
-    {
-        velocity.x *= -1;
-        Vector3 theScale = transform.localScale;
-        theScale.x *= -1;
-        transform.localScale = theScale;
     }
 }
