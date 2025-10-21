@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class Ant : Enemy
 {
+    [SerializeField] Vector2 velocity;
+    public Transform[] MovePoint;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,5 +15,10 @@ public class Ant : Enemy
     void Update()
     {
         
+    }
+
+    public override void Behavior()
+    {
+        throw new System.NotImplementedException();
     }
 }
