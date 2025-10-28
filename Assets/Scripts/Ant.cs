@@ -14,12 +14,6 @@ public class Ant : Enemy
         velocity = new Vector2(-1.0f, 0.0f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         Behavior();

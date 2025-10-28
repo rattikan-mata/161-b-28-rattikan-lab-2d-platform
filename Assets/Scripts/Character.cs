@@ -21,9 +21,9 @@ public abstract class Character : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void TakeDamge(int damage)
-    { 
-        Health -= damage; 
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
         Debug.Log($"{this.name} took damage {damage}. Current Health: {Health}");
 
         IsDead();
